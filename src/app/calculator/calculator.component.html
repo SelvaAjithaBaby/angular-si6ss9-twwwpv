@@ -1,0 +1,30 @@
+<div>
+  <table>
+    <tr>
+      <input type="text" disabled value="{{inputText}}">
+    </tr>
+    <tr>
+      <input type="text" disabled value="{{resultText}}">
+    </tr>
+    <tr>
+      <input type="button" value="1" (click)="pressKey(1)">
+      <input type="button" value="2" (click)="pressKey(2)">
+      <input type="button" value="3" (click)="pressKey(3)">
+    </tr>
+    <tr>
+      <input type="button" value="4" (click)="pressKey(4)">
+      <input type="button" value="5" (click)="pressKey(5)">
+      <input type="button" value="6" (click)="pressKey(6)">
+    </tr>
+    <tr>
+      <input type="button" value="7" (click)="pressKey(7)">
+      <input type="button" value="8" (click)="pressKey(8)">
+      <input type="button" value="9" (click)="pressKey(9)">
+    </tr>
+    <tr>
+      <input type="button" value="#" (click)="pressKey('#')">
+      <input type="button" value="0" (click)="pressKey(0)">
+      <input type="button" value="<-" (click)="delete()">
+    </tr>
+  </table>
+</div>
