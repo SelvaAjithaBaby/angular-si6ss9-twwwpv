@@ -8,6 +8,7 @@ import { AppComponent } from "./app.component";
 import { CalculatorComponent } from "./calculator/calculator.component";
 import { CalculatorService } from "./calculator.service";
 import { converterReducer } from "./reducers/converter.reducer";
+import { DisplayComponent } from './display/display.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,7 @@ import { converterReducer } from "./reducers/converter.reducer";
     RouterModule.forRoot([{ path: "", component: CalculatorComponent }]),
     StoreModule.forRoot({ converter: converterReducer })
   ],
-  declarations: [AppComponent, CalculatorComponent],
+  declarations: [AppComponent, CalculatorComponent, DisplayComponent],
   bootstrap: [AppComponent],
   providers: [CalculatorService]
 })

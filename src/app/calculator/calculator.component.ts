@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { CalculatorService } from "../calculator.service";
+import { Store } from "@ngrx/store";
+import { AppState } from "../app.state";
+import { Converter } from "../model/converter.model";
 
 @Component({
   selector: "app-calculator",
@@ -7,7 +10,10 @@ import { CalculatorService } from "../calculator.service";
   styleUrls: ["./calculator.component.css"]
 })
 export class CalculatorComponent implements OnInit {
-  constructor(private calculatorService: CalculatorService) {}
+  constructor(
+    private calculatorService: CalculatorService,
+    private store: Store<AppState>
+  ) {}
 
   inputText = "";
   resultText = "";
@@ -32,5 +38,12 @@ export class CalculatorComponent implements OnInit {
 
   calculate() {
     this.resultText = this.calculatorService.converToAlphabet(this.inputText);
+    this.store.dispatch({
+      type: "ADD_COIN",
+      payload: <Converter>{
+        inputText: this.inputText,
+        value: "ajitha"
+      }
+    });
   }
 }
